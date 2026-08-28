@@ -16,6 +16,9 @@ return {
         pattern = { "beancount", "bean" },
         group = vim.api.nvim_create_augroup("beancount_maps", { clear = true }),
         callback = function(ev)
+          -- 插件 ftplugin 会设置 foldmethod=syntax，打开文件默认全部折叠，
+          -- 这里关闭默认折叠（zc/zM 仍可手动折叠）。
+          vim.opt_local.foldenable = false
           -- 输入 . 时自动对齐金额 (原 AlignCommodity 映射)
           vim.keymap.set("i", ".", ".<c-o>:AlignCommodity<cr>", { buffer = ev.buf })
           -- Tab 触发账户 omni 补全 (原 <c-x><c-o> 映射)

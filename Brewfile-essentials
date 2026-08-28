@@ -40,7 +40,7 @@ brew "zsh"
 brew "github/gh/gh"
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
-brew "yqrashawn/goku/goku"
+brew "yqrashawn/goku/goku", trusted: true
 brew "laishulu/homebrew/macism"
 
 cask "syncthing"

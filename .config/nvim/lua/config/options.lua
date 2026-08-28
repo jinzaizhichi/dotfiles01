@@ -2,6 +2,13 @@
 -- 基础编辑器选项，迁移自原 .vimrc。
 local opt = vim.opt
 
+-- Python3 provider：必须显式指定，跳过对 $PATH 的候选扫描。
+-- 否则探测会执行 pyenv shims 里的 python3.12，在 pyenv 全局版本
+-- 不含该版本的目录下 shim 会挂死，导致首次触发 :python3 的操作
+-- （如 vim-beancount 的 AlignCommodity/补全）整个 Neovim 卡死。
+-- 该解释器同时装有 pynvim 和 beancount，供 beancount 补全使用。
+vim.g.python3_host_prog = vim.fn.expand("~/.pyenv/versions/beancount/bin/python")
+
 -- 界面
 opt.number = true            -- 显示行号 (set nu)
 opt.cursorline = true        -- 高亮当前行
