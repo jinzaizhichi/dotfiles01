@@ -321,3 +321,14 @@ export PATH="/Users/einverne/.antigravity-ide/antigravity-ide/bin:$PATH"
 # ! Delete this whole block to opt out — OpenKnowledge will not re-add it.
 [ -f "$HOME/.ok/env.sh" ] && . "$HOME/.ok/env.sh"
 # <<< open-knowledge cli <<<
+
+# >>> headroom persistent env >>>
+export HEADROOM_PORT="8787"
+export HEADROOM_HOST="127.0.0.1"
+export HEADROOM_MODE="cache"
+export HEADROOM_BACKEND="anthropic"
+export HEADROOM_TELEMETRY="off"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:8787"
+export ENABLE_TOOL_SEARCH="true"
+export OPENAI_BASE_URL="http://127.0.0.1:8787/v1"
+# <<< headroom persistent env <<<
