@@ -124,6 +124,8 @@ manage_ssh_config = true
 [experimental]
 allow_nested   = false
 pane_history   = true
+switch_ascii_input_source_in_prefix = true
+reveal_hidden_cursor_for_cjk_ime = true
 
 # CJK IME: reveal cursor so input candidate window tracks TUI cursor position.
 # Useful when using Chinese/Japanese input methods with Claude Code, etc.
