@@ -5,15 +5,20 @@
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/d12frosted/dotbot-brew.git
+	ignore = dirty
 [submodule "dotbot-apt-get"]
 	path = dotbot-apt-get
 	url = https://github.com/rubenvereecken/dotbot-apt-get
+	ignore = dirty
 [submodule "dotbot-snap"]
 	path = dotbot-snap
 	url = https://github.com/DrDynamic/dotbot-snap.git
+	ignore = dirty
 [submodule "crontab-dotbot"]
 	path = crontab-dotbot
 	url = https://github.com/fundor333/crontab-dotbot.git
+	ignore = dirty
 [submodule "hammerspoon/Spoons/EnhancedSpaces.spoon"]
 	path = hammerspoon/Spoons/EnhancedSpaces.spoon
 	url = https://github.com/franzbu/EnhancedSpaces.spoon.git
+	ignore = dirty
