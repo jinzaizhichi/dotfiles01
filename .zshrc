@@ -304,6 +304,16 @@ if command -v entire >/dev/null 2>&1; then
   zsh_cached_eval entire-completion entire completion zsh
 fi
 
+# headroom shell completion. headroom is a Click app: it has no `completion`
+# subcommand, the generator is driven by the _HEADROOM_COMPLETE env var.
+# It is a Python entry point, so each run costs ~200ms of interpreter startup;
+# cache the output against the headroom binary like the other integrations.
+# Run `zsh_cache_clear` after upgrading headroom to pick up new subcommands.
+if command -v headroom >/dev/null 2>&1; then
+  zsh_cached_eval -r "$commands[headroom]" headroom-completion \
+    env _HEADROOM_COMPLETE=zsh_source headroom
+fi
+
 # Added by Nowledge Mem
 export PATH="$HOME/.local/bin:$PATH"
 
