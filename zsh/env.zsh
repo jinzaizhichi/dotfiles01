@@ -31,6 +31,12 @@ export PATH="/usr/local/sbin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# The official atuin installer drops the binary in ~/.atuin/bin and appends its
+# own PATH line to the *end* of .zshrc - i.e. after the `command -v atuin` guard
+# that runs `atuin init zsh`. Add it here so the guard sees atuin on a fresh
+# login, not only after a manual `source ~/.zshrc`.
+[[ -d "$HOME/.atuin/bin" ]] && export PATH="$HOME/.atuin/bin:$PATH"
+
 if [[ -d $HOME/.pyenv ]]; then
     # pyenv
 	export PYENV_ROOT="$HOME/.pyenv"
