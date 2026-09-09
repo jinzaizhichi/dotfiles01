@@ -144,3 +144,5 @@
 	date = local
 [http]
 	postBuffer = 524288000
+[submodule]
+	recurse = true
